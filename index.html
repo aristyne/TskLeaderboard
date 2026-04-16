@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inter-House Scoreboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Scoreboard for school inter-house competition" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <div class="brand">
+        <!-- School logo (top-left) -->
+        <svg class="logo" width="48" height="48" viewBox="0 0 64 64" aria-label="School Logo" focusable="false">
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#cccccc"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="12" fill="#3b1f79"/>
+          <path d="M32 14 L10 28 L32 50 L54 28 Z" fill="url(#grad)" opacity="0.9"/>
+          <text x="32" y="38" text-anchor="middle" fill="#fff" font-family="Arial" font-size="8">S</text>
+        </svg>
+        <!-- Editable headline -->
+        <h1 id="headline" contenteditable="true" spellcheck="false" title="Click to edit the headline">
+          Your School Name
+        </h1>
+      </div>
+      <div class="year" id="yearDisplay">Academic Year 2025-2026</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="house-card" data-house="Anselm">
+        <div class="color-bar" style="background: #6A0DAD"></div>
+        <div class="house-info">
+          <h2>Anselm</h2>
+          <div class="points" id="points-Anselm">0</div>
+        </div>
+      </div>
+      <div class="house-card" data-house="Bancroft">
+        <div class="color-bar" style="background: #2E8B57"></div>
+        <div class="house-info">
+          <h2>Bancroft</h2>
+          <div class="points" id="points-Bancroft">0</div>
+        </div>
+      </div>
+      <div class="house-card" data-house="Cranmer">
+        <div class="color-bar" style="background: #FF69B4"></div>
+        <div class="house-info">
+          <h2>Cranmer</h2>
+          <div class="points" id="points-Cranmer">0</div>
+        </div>
+      </div>
+      <div class="house-card" data-house="Grindal">
+        <div class="color-bar" style="background: #FF8C00"></div>
+        <div class="house-info">
+          <h2>Grindal</h2>
+          <div class="points" id="points-Grindal">0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="podium" aria-label="Podium">
+      <h3>Podium</h3>
+      <div class="podium-grid" id="podium"></div>
+    </section>
+
+    <section class="data-entry" id="data-entry" aria-label="Enter scores" hidden>
+      <h3>Enter Points</h3>
+      <form id="entryForm" autocomplete="off">
+        <div class="entry-row">
+          <label for="add-Anselm">Anselm</label>
+          <input id="add-Anselm" type="number" min="0" value="0" />
+        </div>
+        <div class="entry-row">
+          <label for="add-Bancroft">Bancroft</label>
+          <input id="add-Bancroft" type="number" min="0" value="0" />
+        </div>
+        <div class="entry-row">
+          <label for="add-Cranmer">Cranmer</label>
+          <input id="add-Cranmer" type="number" min="0" value="0" />
+        </div>
+        <div class="entry-row">
+          <label for="add-Grindal">Grindal</label>
+          <input id="add-Grindal" type="number" min="0" value="0" />
+        </div>
+        <div class="entry-actions">
+          <button type="submit" class="btn primary">Add Points</button>
+          <button type="button" id="clearInputs" class="btn">Clear</button>
+        </div>
+      </form>
+      <button id="resetBtn" class="btn danger" style="margin-top: 12px;">Reset All</button>
+    </section>
+
+    <button id="toggleEntry" class="toggle-btn" aria-expanded="false" title="Show data entry panel">Enter Data</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">Credits: Izach Tan</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
